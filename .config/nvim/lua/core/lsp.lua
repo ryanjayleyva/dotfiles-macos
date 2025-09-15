@@ -71,7 +71,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         client.config.settings.javascript.inlayHints = inlay_hints
 
         -- Send updated settings to vtsls (Neovim ≥0.11)
-        client.rpc.request('workspace/didChangeConfiguration', {
+        client.rpc.notify('workspace/didChangeConfiguration', {
           settings = client.config.settings,
         })
       end
