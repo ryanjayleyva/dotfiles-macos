@@ -26,7 +26,7 @@ command -v bat >/dev/null 2>&1 && bat cache --build
 or Run the Setup Script
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://gitea.com/rjleyva/dotfiles-macos/raw/branch/main/scripts/dev-setup.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ryanjayleyva/dotfiles-macos/main/scripts/dev-setup.sh)"
 ```
 
 This will:
