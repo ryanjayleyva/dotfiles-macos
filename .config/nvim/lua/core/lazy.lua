@@ -19,6 +19,10 @@ M.setup = function()
   require('lazy').setup({
     { import = 'plugins' },
   }, {
+    rocks = {
+      enabled = false,
+    },
+
     defaults = {
       lazy = true,
       version = false,
