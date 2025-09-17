@@ -29,20 +29,17 @@ M.spec = {
 
     kulala.setup(opts)
 
-    -- helper function
-    local function map(lhs, rhs, desc)
-      vim.keymap.set(
-        'n',
-        lhs,
-        rhs,
-        { desc = desc, noremap = true, silent = true }
-      )
+    -- helper function to register keymaps
+    local function map(lhs, fn_name, desc)
+      vim.keymap.set('n', lhs, function()
+        require('kulala')[fn_name]()
+      end, { desc = desc, noremap = true, silent = true })
     end
 
     -- Kulala keymaps
-    map('<leader>rs', kulala.run, 'Send request under cursor')
-    map('<leader>ra', kulala.run_all, 'Send all requests in file')
-    map('<leader>rb', kulala.open_scratchpad, 'Open kulala scratchpad')
+    map('<leader>rs', 'run', 'Send request under cursor')
+    map('<leader>ra', 'run_all', 'Send all requests in file')
+    map('<leader>rb', 'open_scratchpad', 'Open kulala scratchpad')
   end,
 }
 
