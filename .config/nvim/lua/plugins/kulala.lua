@@ -3,6 +3,7 @@ local M = {}
 M.spec = {
   'mistweaverco/kulala.nvim',
   ft = { 'http', 'rest' },
+  lazy = true,
 
   init = function()
     vim.filetype.add {
@@ -20,33 +21,28 @@ M.spec = {
   },
 
   config = function(_, opts)
-    local ok, kulala = pcall(require, 'kulala')
-    if not ok then
+    local status_ok, kulala = pcall(require, 'kulala')
+    if not status_ok then
       vim.notify('[kulala.nvim] failed to load', vim.log.levels.ERROR)
       return
     end
+
     kulala.setup(opts)
 
-    -- custom keymaps
-    vim.keymap.set('n', '<leader>rs', function()
-      require('kulala').run()
-    end, {
-      desc = 'Send request under cursor',
-      noremap = true,
-      silent = true,
-    })
+    -- helper function
+    local function map(lhs, rhs, desc)
+      vim.keymap.set(
+        'n',
+        lhs,
+        rhs,
+        { desc = desc, noremap = true, silent = true }
+      )
+    end
 
-    vim.keymap.set('n', '<leader>ra', function()
-      require('kulala').run_all()
-    end, {
-      desc = 'Send all requests in file',
-      noremap = true,
-      silent = true,
-    })
-
-    vim.keymap.set('n', '<leader>rb', function()
-      require('kulala').open_scratchpad()
-    end, { desc = 'Open kulala scratchpad', noremap = true, silent = true })
+    -- Kulala keymaps
+    map('<leader>rs', kulala.run, 'Send request under cursor')
+    map('<leader>ra', kulala.run_all, 'Send all requests in file')
+    map('<leader>rb', kulala.open_scratchpad, 'Open kulala scratchpad')
   end,
 }
 
