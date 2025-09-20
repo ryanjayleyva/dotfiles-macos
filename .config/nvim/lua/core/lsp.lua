@@ -23,6 +23,7 @@ vim.lsp.enable {
   'astro',
   'cssls',
   'emmet-language-server',
+  'eslint',
   'gopls',
   'graphql',
   'html',
