@@ -18,13 +18,12 @@ check_homebrew() {
 # Install GUI apps via Homebrew cask
 install_apps() {
   local brew_apps=(
-    google-chrome
+    arc
     keycastr
     microsoft-teams
     raycast
     spotify
     wezterm
-    zen
     zoom
   )
 
