@@ -18,13 +18,12 @@ check_homebrew() {
 # Uninstall GUI apps via Homebrew cask
 uninstall_apps() {
   local brew_apps=(
-    google-chrome
+    arc
     keycastr
     microsoft-teams
     raycast
     spotify
     wezterm
-    zen
     zoom
   )
 
