@@ -3,28 +3,32 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Environment
+# Environment Variables
 export EDITOR="nvim"
 export BAT_THEME="vague"
 
-# Add Go bin to PATH so goimports works
+# PATH Configuration
 export PATH="$PATH:$HOME/go/bin"
 
-# Powerlevel10k
+# NVM (Node Version Manager) - Load early
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Powerlevel10k Theme
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+# Tool Integrations
+eval "$(zoxide init --cmd=cd zsh)"
 
 # Aliases
 alias ls='eza --long --all --git --icons --time-style=iso --group --classify'
 alias tree="eza --all --tree --icons"
-
 alias brew-maint="$HOME/dotfiles-macos/scripts/brew-maintenance.sh"
 alias cleanup="$HOME/dotfiles-macos/scripts/system-cleanup.sh"
 alias tmux-s="$HOME/dotfiles-macos/scripts/tmux-setup.sh"
 
-# Zoxide (cd integration)
-eval "$(zoxide init --cmd=cd zsh)"
-
-# Plugins
+# Zsh Plugins (Load last for best performance)
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
