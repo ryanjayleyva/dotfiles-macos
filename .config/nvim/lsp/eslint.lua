@@ -4,11 +4,13 @@ M.spec = {
   cmd = { 'vscode-eslint-language-server', '--stdio' },
 
   filetypes = {
+    'astro',
     'javascript',
     'javascriptreact',
     'typescript',
     'typescriptreact',
     'json',
+    'svelte',
     'yaml',
   },
 
