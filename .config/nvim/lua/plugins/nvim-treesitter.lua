@@ -37,6 +37,7 @@ M.spec = {
         'css',
         'diff',
         'gitignore',
+        'go',
         'graphql',
         'html',
         'http',
