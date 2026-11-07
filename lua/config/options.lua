@@ -41,5 +41,3 @@ vim.opt.shortmess:append('WI')
 
 -- Set colors
 vim.opt.termguicolors = true
-vim.opt.background = 'dark'
-vim.cmd.colorscheme('vim')
