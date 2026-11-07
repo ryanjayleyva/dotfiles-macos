@@ -28,6 +28,10 @@
       "rev": "016802de402556da54c36bd7359b441266b01cdd",
       "src": "https://github.com/stevearc/conform.nvim"
     },
+    "cutiepro.nvim": {
+      "rev": "2385eb6cf689c31eb4bf03f157cd7c63ab0e4c19",
+      "src": "https://github.com/ryanjayleyva/cutiepro.nvim"
+    },
     "friendly-snippets": {
       "rev": "b2ea5c41a150ba72fb656eedb4ed0a86d138d945",
       "src": "https://github.com/rafamadriz/friendly-snippets"

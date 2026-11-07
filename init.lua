@@ -24,3 +24,4 @@ require('plugins.nvim-dap')
 require('plugins.rustaceanvim') -- Load before neotest because its adapter requires rustaceanvim
 require('plugins.neotest')
 require('core.lsp')
+require('plugins.cutiepro')
