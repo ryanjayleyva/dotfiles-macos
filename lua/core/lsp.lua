@@ -21,8 +21,9 @@ vim.lsp.enable({
 	'postgres_lsp',
 	'pyright',
 	'ruff',
-	-- Skip rust-analyzer because rustaceanvim (plugins/rustaceanvim.lua) starts it from lsp/rust-analyzer.lua
-	-- Enabling it here starts a second client that drops those settings
+	-- Skip rust-analyzer because rustaceanvim (plugins/rustaceanvim.lua) starts it
+	-- from lsp/rust-analyzer.lua Enabling it here starts the client without those
+	-- settings because rustaceanvim clears them from the shared config
 	-- 'rust-analyzer',
 	'svelte',
 	'tailwindcss',
