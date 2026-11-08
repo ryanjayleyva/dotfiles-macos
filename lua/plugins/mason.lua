@@ -21,6 +21,7 @@ local servers = {
 	postgres_lsp = 'postgres-language-server',
 	pyright = 'pyright',
 	ruff = 'ruff',
+	-- Skip enabling in core/lsp.lua because rustaceanvim starts it with these settings
 	['rust-analyzer'] = 'rust-analyzer',
 	svelte = 'svelte-language-server',
 	tailwindcss = 'tailwindcss-language-server',
