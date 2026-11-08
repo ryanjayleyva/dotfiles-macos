@@ -7,6 +7,7 @@ vim.opt.wrap = false
 vim.opt.signcolumn = 'yes'
 vim.opt.scrolloff = 8
 vim.opt.winborder = 'rounded'
+vim.opt.laststatus = 0
 
 -- Set indentation
 vim.opt.tabstop = 2
