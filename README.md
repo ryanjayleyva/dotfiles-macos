@@ -80,6 +80,10 @@ contributors.
 
 - [tmux](https://github.com/tmux/tmux)
 
+### Editor
+
+- [Neovim](https://github.com/neovim/neovim)
+
 ### Tooling
 
 - [mason.nvim](https://github.com/mason-org/mason.nvim) and
@@ -91,9 +95,6 @@ contributors.
 
 ### Editing
 
-- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) and
-  [telescope-fzf-native.nvim](
-    https://github.com/nvim-telescope/telescope-fzf-native.nvim)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter),
   [nvim-treesitter-context](
     https://github.com/nvim-treesitter/nvim-treesitter-context)
@@ -112,6 +113,12 @@ contributors.
 - [mini.pairs](https://github.com/nvim-mini/mini.pairs)
 - [refactoring.nvim](https://github.com/ThePrimeagen/refactoring.nvim) and
   [async.nvim](https://github.com/lewis6991/async.nvim)
+
+### Navigation
+
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) and
+  [telescope-fzf-native.nvim](
+    https://github.com/nvim-telescope/telescope-fzf-native.nvim)
 - [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
 
 ### Git
