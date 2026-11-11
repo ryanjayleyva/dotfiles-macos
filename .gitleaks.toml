@@ -1,0 +1,89 @@
+title = "dotfiles-macos gitleaks config"
+
+# Default rules cover known API keys, tokens and private keys.
+[extend]
+useDefault = true
+
+# ---------------------------------------------------------------------------
+# Custom rules: private data that is not a "secret" but should not be public.
+# ---------------------------------------------------------------------------
+
+[[rules]]
+id = "personal-home-path"
+description = "Absolute home directory path (leaks username/machine layout); use ~ or $HOME"
+regex = '''(?:/Users|/home)/[A-Za-z0-9._-]+/'''
+tags = ["privacy", "path"]
+
+[rules.allowlist]
+regexTarget = "match"
+regexes = ['''/(?:Users|home)/(?:runner|user|username|you|your-?name|<[^>]+>|\$\{?USER\}?|\$USER)/''']
+
+[[rules]]
+id = "email-address"
+description = "Email address (personal or corporate)"
+regex = '''\b[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}\b'''
+tags = ["privacy", "email"]
+
+[rules.allowlist]
+regexTarget = "match"
+regexes = [
+  '''@users\.noreply\.github\.com$''',
+  '''@example\.(?:com|org|net)$''',
+  '''^noreply@''',
+  # Public-facing address the owner has approved for sharing
+  '''^hello\.rjleyva@gmail\.com$''',
+]
+
+[[rules]]
+id = "private-ip-address"
+description = "Private/internal IPv4 address"
+regex = '''\b(?:10\.\d{1,3}\.\d{1,3}\.\d{1,3}|192\.168\.\d{1,3}\.\d{1,3}|172\.(?:1[6-9]|2\d|3[01])\.\d{1,3}\.\d{1,3})\b'''
+tags = ["privacy", "network"]
+
+[[rules]]
+id = "internal-hostname"
+description = "Internal hostname (.local, .internal, .corp, .lan, .intranet, .home.arpa)"
+regex = '''\b[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.(?:local|internal|corp|lan|intranet|home\.arpa)\b'''
+tags = ["privacy", "network"]
+
+[[rules]]
+id = "credentials-in-url"
+description = "URL with embedded user:password credentials"
+regex = '''[a-z][a-z0-9+.-]*://[^\s/:@'"]+:[^\s/@'"]+@[^\s/'"]+'''
+tags = ["secret", "url"]
+
+[rules.allowlist]
+regexTarget = "match"
+regexes = ['''://[^:]+:(?:password|pass|secret|changeme|xxx+|\*+|<[^>]+>|\$\{?[A-Z_]+\}?)@''']
+
+[[rules]]
+id = "generic-secret-assignment"
+description = "Hardcoded value assigned to a secret-looking name (token/secret/password/api key/license)"
+regex = '''(?i)\b[\w.-]*(?:token|secret|passw(?:or)?d|passwd|api[_-]?key|license[_-]?key|client[_-]?secret)[\w.-]*["']?\s*[:=]\s*["'][A-Za-z0-9/+_=.\-]{12,}["']'''
+tags = ["secret"]
+
+[rules.allowlist]
+regexTarget = "match"
+regexes = ['''(?i)(?:example|placeholder|changeme|your[_-]|xxxx|<[^>]+>)''']
+
+[[rules]]
+id = "sensitive-file"
+description = "File that normally holds secrets or private config (env files, keys, ssh/aws/netrc, kubeconfig, http-client env)"
+path = '''(?i)(?:^|/)(?:\.env(?:\..+)?|\.netrc|\.npmrc|\.pypirc|\.pgpass|\.git-credentials|id_(?:rsa|dsa|ecdsa|ed25519)|[^/]+\.(?:pem|p12|pfx|key|keystore|jks|kdbx|ovpn)|kubeconfig|credentials(?:\.json)?|http-client\.private\.env\.json|\.?secrets?\.(?:json|ya?ml|toml|env)|(?:\.ssh|\.aws|\.gnupg|\.kube)/.+)$'''
+tags = ["privacy", "file"]
+
+[rules.allowlist]
+paths = ['''(?i)\.env\.(?:example|sample|template)$''']
+
+# ---------------------------------------------------------------------------
+# Global allowlist
+# ---------------------------------------------------------------------------
+
+[allowlist]
+description = "Global allowlist"
+paths = [
+  '''(?:^|/)\.DS_Store$''',
+  '''^LICENSE$''',
+  '''^\.gitleaks\.toml$''',
+  '''^assets/''',
+]
