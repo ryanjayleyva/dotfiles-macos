@@ -35,5 +35,6 @@
     "{\"source\":\"npm:pi-lens\",\"scope\":\"user\"}": "4.4.12",
     "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.88.0",
     "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.47.0"
-  }
+  },
+  "transport": "auto"
 }
