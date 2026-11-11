@@ -31,7 +31,7 @@ vim.opt.inccommand = 'split'
 vim.opt.spelllang = 'en_us'
 
 -- Set manual completion behavior because nvim-cmp handles the rest
-vim.opt.completeopt = 'menu,menuone,noselect,popup'
+vim.opt.completeopt = 'menu,menuone,noselect'
 
 -- Set file and command behavior
 vim.opt.path:append('**')
