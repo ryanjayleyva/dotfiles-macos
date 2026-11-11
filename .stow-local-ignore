@@ -6,3 +6,5 @@
 ^/\.stow-local-ignore
 \.DS_Store
 ^/scripts
+^/\.github
+^/\.gitleaks\.toml
