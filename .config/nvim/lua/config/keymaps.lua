@@ -1,24 +1,41 @@
--- Exit insert mode on jk
-vim.keymap.set('i', 'jk', '<ESC>')
+-- Insert mode
+vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Exit insert mode' })
 
--- Increment and decrement numbers
-vim.keymap.set('n', '<leader>+', '<C-a>')
-vim.keymap.set('n', '<leader>-', '<C-x>')
+-- Numbers
+vim.keymap.set('n', '<leader>+', '<C-a>', { desc = 'Increment number' })
+vim.keymap.set('n', '<leader>-', '<C-x>', { desc = 'Decrement number' })
 
--- Clear search highlights
-vim.keymap.set('n', '<leader>cs', vim.cmd.nohlsearch)
+-- Search
+vim.keymap.set(
+	'n',
+	'<leader>cs',
+	'<Cmd>nohlsearch<CR>',
+	{ desc = 'Clear search highlights' }
+)
 
--- Save and source the file
-vim.keymap.set('n', '<leader>us', '<cmd>update | source<CR>')
+-- File
+vim.keymap.set(
+	'n',
+	'<leader>us',
+	'<Cmd>update | source<CR>',
+	{ desc = 'Save and source file' }
+)
 
--- Send diagnostics to quickfix list
-vim.keymap.set('n', '<leader>xq', vim.diagnostic.setqflist)
-
--- Send diagnostics to location list
-vim.keymap.set('n', '<leader>xl', vim.diagnostic.setloclist)
-
--- Toggle diagnostic virtual text
+-- Diagnostics
+vim.keymap.set(
+	'n',
+	'<leader>xq',
+	vim.diagnostic.setqflist,
+	{ desc = 'Diagnostics to quickfix list' }
+)
+vim.keymap.set(
+	'n',
+	'<leader>xl',
+	vim.diagnostic.setloclist,
+	{ desc = 'Diagnostics to location list' }
+)
 vim.keymap.set('n', '<leader>xt', function()
-	local current_status = vim.diagnostic.config().virtual_text
-	vim.diagnostic.config({ virtual_text = not current_status })
-end)
+	vim.diagnostic.config({
+		virtual_text = not vim.diagnostic.config().virtual_text,
+	})
+end, { desc = 'Toggle diagnostic virtual text' })
