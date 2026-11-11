@@ -1,0 +1,39 @@
+{
+  "$schema": "https://pi.dev/schemas/settings.schema.json",
+  "theme": "system",
+  "defaultProvider": "anthropic",
+  "defaultModel": "claude-sonnet-5-5",
+  "modelThinkingLevels": {
+    "anthropic/claude-sonnet-5-5": "medium"
+  },
+  "quietStartup": true,
+  "hideThinkingBlock": true,
+  "sessionShareDestination": "auto",
+  "cacheWarming": "streaming",
+  "enableInstallTelemetry": true,
+  "defaultProjectTrust": "ask",
+  "tuiMode": "fullscreen",
+  "fullscreenExitOutput": "transcript",
+  "fullscreenScrollbar": "hidden",
+  "fullscreenWheelScrollLines": "auto",
+  "compaction": {
+    "enabled": true
+  },
+  "warnings": {
+    "anthropicExtraUsage": false
+  },
+  "showHardwareCursor": true,
+  "packages": [
+    "npm:pi-lens",
+    "npm:pi-subagents",
+    "npm:pi-simplify",
+    "npm:pi-web-access",
+    "npm:@juicesharp/rpiv-todo"
+  ],
+  "lastChangelogVersion": "1.5.2",
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:pi-lens\",\"scope\":\"user\"}": "4.4.12",
+    "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.88.0",
+    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.47.0"
+  }
+}
