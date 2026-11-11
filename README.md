@@ -2,17 +2,19 @@
 
 ![Neovim config overview](assets/neovim-config-overview.webp)
 
-Personal Neovim 0.12+ config with native `vim.pack` and `vim.lsp` and
-Mason-managed tooling.
+Personal macOS dotfiles managed with
+[GNU Stow](https://www.gnu.org/software/stow/).
 
-It targets Neovim 0.12 and later only. Plugins are managed with the built-in
-`vim.pack`, and tools and language servers are installed by
-[Mason](https://github.com/mason-org/mason.nvim). Each server has its own
-file in `lsp/` directory.
+- Neovim 0.12+ with native `vim.pack` and `vim.lsp`, and tooling from
+  [Mason](https://github.com/mason-org/mason.nvim)
+- tmux config
+- tmux session script
 
 ## Requirements
 
+- [GNU Stow](https://www.gnu.org/software/stow/)
 - [Neovim](https://neovim.io) 0.12 or later
+- [tmux](https://github.com/tmux/tmux), for the tmux config and script
 - [`git`](https://git-scm.com), [`node`](https://nodejs.org),
   [`go`](https://go.dev) and [`cargo`](https://doc.rust-lang.org/cargo/) for
   the tools that need them
@@ -24,13 +26,21 @@ file in `lsp/` directory.
 ## Install
 
 ```sh
-git clone https://github.com/ryanjayleyva/dotfiles-macos ~/.config/nvim
+git clone https://github.com/ryanjayleyva/dotfiles-macos ~/dotfiles-macos
+cd ~/dotfiles-macos
+stow .
 ```
 
-The first start installs the plugins, the `tree-sitter` parsers and the
-Mason tools in the background. Restart once it settles.
-
 ## Layout
+
+```bash
+.config/nvim/             Neovim config, linked to ~/.config/nvim
+.config/tmux/             tmux config, linked to ~/.config/tmux
+scripts/                  Helper scripts
+.stow-local-ignore        Files Stow must not link
+```
+
+### Neovim
 
 ```bash
 init.lua                  Boot order, only requires
@@ -47,9 +57,28 @@ nvim-pack-lock.json       Plugin revisions
 To add a language server, create `lsp/<name>.lua`, then add it to the Mason
 table in `lua/plugins/mason.lua` and to the list in `lua/core/lsp.lua`.
 
+### tmux
+
+```bash
+tmux.conf                 Entry point, sources the files below
+options.conf              Options
+terminal.conf             Terminal settings
+bindings.conf             Key bindings
+statusline.conf           Status line
+```
+
 ## Credits
 
-This config is mostly glue around these projects. Thanks to their authors.
+This config is mostly glue around these projects. Thanks to their authors and
+contributors.
+
+### Dotfiles
+
+- [GNU Stow](https://www.gnu.org/software/stow/)
+
+### Terminal
+
+- [tmux](https://github.com/tmux/tmux)
 
 ### Tooling
 
