@@ -8,3 +8,4 @@
 ^/scripts
 ^/\.github
 ^/\.gitleaks\.toml
+^/docs
