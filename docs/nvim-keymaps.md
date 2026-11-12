@@ -243,4 +243,3 @@ Built into Neovim, not set in this config. Listed because they sit next to the k
 | Normal | `gcc` | Toggle comment line |
 | Visual | `an` `in` | Grow or shrink the selection by tree-sitter node |
 | Visual | `[n` `]n` | Select previous or next node |
-
