@@ -16,12 +16,18 @@ require('cmp').setup.filetype({ 'sql', 'mysql', 'plsql' }, {
 
 vim.g.db_ui_use_nerd_fonts = 1
 
-vim.keymap.set('n', '<leader>Db', '<cmd>DBUI<cr>')
+-- Database
+vim.keymap.set(
+	'n',
+	'<leader>Db',
+	'<cmd>DBUI<cr>',
+	{ desc = 'Toggle database UI' }
+)
 
 -- Rebind because the default <leader>R shadows the kulala prefix in results
 vim.keymap.set(
 	'n',
 	'<leader>Dl',
 	'<Plug>(DBUI_ToggleResultLayout)',
-	{ remap = true }
+	{ remap = true, desc = 'Toggle query result layout' }
 )
