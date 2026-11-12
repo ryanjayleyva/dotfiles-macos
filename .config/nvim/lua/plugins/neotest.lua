@@ -25,19 +25,35 @@ neotest.setup({
 	},
 })
 
-vim.keymap.set('n', '<leader>tt', neotest.summary.toggle)
-vim.keymap.set('n', '<leader>tr', neotest.run.run)
-vim.keymap.set('n', '<leader>ts', neotest.run.stop)
-vim.keymap.set('n', '<leader>ta', neotest.run.attach)
+-- Tests
+vim.keymap.set(
+	'n',
+	'<leader>tt',
+	neotest.summary.toggle,
+	{ desc = 'Toggle test summary' }
+)
+vim.keymap.set(
+	'n',
+	'<leader>tr',
+	neotest.run.run,
+	{ desc = 'Run nearest test' }
+)
+vim.keymap.set('n', '<leader>ts', neotest.run.stop, { desc = 'Stop test run' })
+vim.keymap.set(
+	'n',
+	'<leader>ta',
+	neotest.run.attach,
+	{ desc = 'Attach to test run' }
+)
 -- Enter the window because the navigator keys cannot reach a floating window
 vim.keymap.set('n', '<leader>to', function()
 	neotest.output.open({ enter = true })
-end)
+end, { desc = 'Open test output' })
 
 vim.keymap.set('n', '<leader>tf', function()
 	neotest.run.run(vim.fn.expand('%'))
-end)
+end, { desc = 'Run tests in file' })
 
 vim.keymap.set('n', '<leader>td', function()
 	neotest.run.run({ strategy = 'dap' })
-end)
+end, { desc = 'Debug nearest test' })
