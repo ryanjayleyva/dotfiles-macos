@@ -36,6 +36,7 @@ stow .
 ```bash
 .config/nvim/             Neovim config, linked to ~/.config/nvim
 .config/tmux/             tmux config, linked to ~/.config/tmux
+docs/                     Documentation, not linked
 scripts/                  Helper scripts
 .stow-local-ignore        Files Stow must not link
 ```
@@ -66,6 +67,10 @@ terminal.conf             Terminal settings
 bindings.conf             Key bindings
 statusline.conf           Status line
 ```
+
+## Docs
+
+- [Neovim keymaps](docs/nvim-keymaps.md)
 
 ## Credits
 
