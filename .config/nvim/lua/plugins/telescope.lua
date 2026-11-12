@@ -1,8 +1,10 @@
 -- Build fzf-native after updates because vim.pack has no build step
 vim.api.nvim_create_autocmd('PackChanged', {
 	callback = function(event)
-		local is_fzf_native = event.data.spec.name == 'telescope-fzf-native.nvim'
-		if is_fzf_native and event.data.kind ~= 'delete' then
+		local plugin_name = event.data.spec.name
+		local was_deleted = event.data.kind == 'delete'
+
+		if plugin_name == 'telescope-fzf-native.nvim' and not was_deleted then
 			vim.system({ 'make' }, { cwd = event.data.path }):wait()
 		end
 	end,
@@ -26,14 +28,18 @@ telescope.setup({
 	},
 })
 
+-- Show line numbers in previews except help, and wrap long CSV lines
 vim.api.nvim_create_autocmd('User', {
 	pattern = 'TelescopePreviewerLoaded',
-	callback = function(args)
-		if args.data.filetype ~= 'help' then
+	callback = function(event)
+		local filetype = event.data.filetype
+		local file_name = event.data.bufname
+
+		if filetype ~= 'help' then
 			vim.wo.number = true
 		end
 
-		if args.data.bufname and args.data.bufname:match('%.csv$') then
+		if file_name and file_name:match('%.csv$') then
 			vim.wo.wrap = true
 		end
 	end,
@@ -48,8 +54,13 @@ vim.keymap.set('n', '<leader>ff', function()
 		hidden = true,
 		file_ignore_patterns = { '%.git/' },
 	})
-end)
+end, { desc = 'Find files' })
 
-vim.keymap.set('n', '<leader>fg', builtin.live_grep)
-vim.keymap.set('n', '<leader>fb', builtin.buffers)
-vim.keymap.set('n', '<leader>fh', builtin.help_tags)
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find buffers' })
+vim.keymap.set(
+	'n',
+	'<leader>fh',
+	builtin.help_tags,
+	{ desc = 'Find help tags' }
+)
