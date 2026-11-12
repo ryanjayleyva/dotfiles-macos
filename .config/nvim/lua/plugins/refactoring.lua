@@ -6,4 +6,4 @@ vim.pack.add({
 
 vim.keymap.set({ 'n', 'x' }, '<leader>rs', function()
 	require('refactoring').select_refactor()
-end)
+end, { desc = 'Select refactor' })
