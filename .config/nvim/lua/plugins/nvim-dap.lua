@@ -92,11 +92,27 @@ end
 
 require('dapui').setup()
 
-vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint)
-vim.keymap.set('n', '<leader>dc', dap.continue)
-vim.keymap.set('n', '<leader>di', dap.step_into)
-vim.keymap.set('n', '<leader>do', dap.step_over)
-vim.keymap.set('n', '<leader>dO', dap.step_out)
-vim.keymap.set('n', '<leader>dt', dap.terminate)
-vim.keymap.set('n', '<leader>dr', dap.repl.open)
-vim.keymap.set('n', '<leader>du', require('dapui').toggle)
+-- Debugging
+vim.keymap.set(
+	'n',
+	'<leader>db',
+	dap.toggle_breakpoint,
+	{ desc = 'Toggle breakpoint' }
+)
+vim.keymap.set('n', '<leader>dc', dap.continue, { desc = 'Continue debugging' })
+vim.keymap.set('n', '<leader>di', dap.step_into, { desc = 'Step into' })
+vim.keymap.set('n', '<leader>do', dap.step_over, { desc = 'Step over' })
+vim.keymap.set('n', '<leader>dO', dap.step_out, { desc = 'Step out' })
+vim.keymap.set(
+	'n',
+	'<leader>dt',
+	dap.terminate,
+	{ desc = 'Terminate debug session' }
+)
+vim.keymap.set('n', '<leader>dr', dap.repl.open, { desc = 'Open debug REPL' })
+vim.keymap.set(
+	'n',
+	'<leader>du',
+	require('dapui').toggle,
+	{ desc = 'Toggle debug UI' }
+)
