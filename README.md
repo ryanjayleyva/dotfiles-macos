@@ -71,6 +71,7 @@ statusline.conf           Status line
 ## Docs
 
 - [Neovim keymaps](docs/nvim-keymaps.md)
+- [tmux keymaps](docs/tmux-keymaps.md)
 
 ## Credits
 
