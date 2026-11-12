@@ -98,6 +98,21 @@ end
 
 -- Grow and shrink the selection with the built-in an and in
 -- Use remap because an and in are mappings
-vim.keymap.set('n', '<leader>ci', 'van', { remap = true })
-vim.keymap.set('x', '<leader>ci', 'an', { remap = true })
-vim.keymap.set('x', '<leader>cd', 'in', { remap = true })
+vim.keymap.set(
+	'n',
+	'<leader>ci',
+	'van',
+	{ remap = true, desc = 'Start selection' }
+)
+vim.keymap.set(
+	'x',
+	'<leader>ci',
+	'an',
+	{ remap = true, desc = 'Grow selection' }
+)
+vim.keymap.set(
+	'x',
+	'<leader>cd',
+	'in',
+	{ remap = true, desc = 'Shrink selection' }
+)
