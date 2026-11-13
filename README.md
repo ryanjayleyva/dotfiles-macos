@@ -9,9 +9,11 @@ Personal macOS dotfiles managed with
   [Mason](https://github.com/mason-org/mason.nvim)
 - tmux config
 - tmux session script
+- `Brewfile` for the Homebrew packages, casks and global tools
 
 ## Requirements
 
+- [Homebrew](https://brew.sh), to install everything in the `Brewfile`
 - [GNU Stow](https://www.gnu.org/software/stow/)
 - [Neovim](https://neovim.io) 0.12 or later
 - [tmux](https://github.com/tmux/tmux), for the tmux config and script
@@ -20,6 +22,8 @@ Personal macOS dotfiles managed with
   the tools that need them
 - [`rustfmt`](https://github.com/rust-lang/rustfmt) from
   [rustup](https://rustup.rs), because Mason has no package for it
+- [`uv`](https://docs.astral.sh/uv/) for Python, installed with the
+  standalone installer instead of Homebrew so `uv self update` works
 - A [Kulala](https://github.com/dont-be-evil-company/kulala.nvim) license
   token in `KULALA_CORE_LICENSE_TOKEN`, only if you use the HTTP client
 
@@ -28,6 +32,7 @@ Personal macOS dotfiles managed with
 ```sh
 git clone https://github.com/ryanjayleyva/dotfiles-macos ~/dotfiles-macos
 cd ~/dotfiles-macos
+brew bundle
 stow .
 ```
 
@@ -36,6 +41,7 @@ stow .
 ```bash
 .config/nvim/             Neovim config, linked to ~/.config/nvim
 .config/tmux/             tmux config, linked to ~/.config/tmux
+Brewfile                  Homebrew packages, not linked
 docs/                     Documentation, not linked
 scripts/                  Helper scripts
 .stow-local-ignore        Files Stow must not link
