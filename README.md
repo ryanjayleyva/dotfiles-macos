@@ -10,6 +10,7 @@ Personal macOS dotfiles managed with
 - tmux config
 - tmux session script
 - `Brewfile` for the Homebrew packages, casks and global tools
+- zsh config, `.zshrc`, with Powerlevel10k and zsh plugins
 
 ## Requirements
 
@@ -32,9 +33,21 @@ Personal macOS dotfiles managed with
 ```sh
 git clone https://github.com/ryanjayleyva/dotfiles-macos ~/dotfiles-macos
 cd ~/dotfiles-macos
-brew bundle
-stow .
+scripts/bootstrap.sh
 ```
+
+> **IMPORTANT:** The script only works on Apple Silicon Macs.
+
+The script installs, in order:
+
+1. Homebrew
+2. Everything in the `Brewfile`
+3. `uv`, with the standalone installer
+4. Rust and `rustfmt`, with rustup, using its default options (`-y`), which also adds cargo to your
+   `~/.zshenv`
+5. Your dotfiles, with `stow .`
+
+Open a new terminal afterwards so `uv` and `cargo` are on your `PATH`.
 
 ## Layout
 
@@ -42,6 +55,7 @@ stow .
 .config/nvim/             Neovim config, linked to ~/.config/nvim
 .config/tmux/             tmux config, linked to ~/.config/tmux
 Brewfile                  Homebrew packages, not linked
+.zshrc                    zsh config, linked to ~/.zshrc
 docs/                     Documentation, not linked
 scripts/                  Helper scripts
 .stow-local-ignore        Files Stow must not link
