@@ -6,6 +6,7 @@ brew "pnpm"
 # Editor & terminal
 brew "neovim"
 brew "tmux"
+cask "wezterm"
 cask "font-caskaydia-mono-nerd-font"
 
 # Git & security
