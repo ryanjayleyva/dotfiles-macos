@@ -29,7 +29,6 @@ brew "stow"
 
 # Linting & formatting
 brew "actionlint"
-brew "stylua"
 
 # Keyboard firmware
 brew "qmk/qmk/qmk"
@@ -37,9 +36,6 @@ brew "qmk/qmk/qmk"
 # Image libraries
 brew "librsvg"
 brew "webp"
-
-# Go tools
-go "golang.org/x/tools/gopls"
 
 # npm globals
 npm "@celigo/celigo-cli"
