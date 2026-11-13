@@ -16,6 +16,11 @@ cask "font-caskaydia-mono-nerd-font"
 brew "git-delta"
 brew "gitleaks"
 
+# Shell
+brew "powerlevel10k"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+
 # CLI utilities
 brew "bat"
 brew "eza"
