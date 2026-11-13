@@ -1,3 +1,6 @@
+# Taps
+tap "qmk/qmk"
+
 # Languages & runtimes
 brew "go"
 brew "node"
@@ -27,6 +30,9 @@ brew "stow"
 # Linting & formatting
 brew "actionlint"
 brew "stylua"
+
+# Keyboard firmware
+brew "qmk/qmk/qmk"
 
 # Image libraries
 brew "librsvg"
