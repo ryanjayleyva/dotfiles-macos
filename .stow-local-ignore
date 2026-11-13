@@ -10,3 +10,4 @@
 ^/\.github
 ^/\.gitleaks\.toml
 ^/docs
+^/\.ruff_cache
