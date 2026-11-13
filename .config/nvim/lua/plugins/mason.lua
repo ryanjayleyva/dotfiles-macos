@@ -37,7 +37,6 @@ local tools = {
 	'delve',
 	'js-debug-adapter',
 	'prettier',
-	'shellcheck',
 	'shfmt',
 	'stylua',
 	'tree-sitter-cli',
