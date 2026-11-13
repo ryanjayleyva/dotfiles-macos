@@ -2,6 +2,7 @@
 ^/\.gitignore
 ^/README.*
 ^/LICENSE.*
+^/Brewfile
 ^/assets
 ^/\.stow-local-ignore
 \.DS_Store
