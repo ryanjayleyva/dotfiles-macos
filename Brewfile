@@ -14,9 +14,14 @@ brew "git-delta"
 brew "gitleaks"
 
 # CLI utilities
+brew "bat"
+brew "eza"
+brew "fd"
+brew "fzf"
 brew "ripgrep"
 brew "tree"
 brew "yq"
+brew "zoxide"
 brew "stow"
 
 # Linting & formatting
