@@ -2,7 +2,8 @@
 
 set -euo pipefail
 
-DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+DOTFILES_DIR="$HOME/dotfiles-macos"
+DOTFILES_REPO="https://github.com/ryanjayleyva/dotfiles-macos.git"
 
 check_platform() {
   if [[ "$(uname -s)" != Darwin || "$(uname -m)" != arm64 ]]; then
@@ -27,6 +28,12 @@ install_homebrew() {
   load_homebrew
 }
 
+clone_dotfiles() {
+  if [[ ! -d "$DOTFILES_DIR" ]]; then
+    git clone "$DOTFILES_REPO" "$DOTFILES_DIR"
+  fi
+}
+
 trust_qmk() {
   local tap
 
@@ -39,7 +46,6 @@ trust_qmk() {
 }
 
 install_brewfile() {
-  trust_qmk
   brew bundle --file="$DOTFILES_DIR/Brewfile"
 }
 
@@ -67,6 +73,8 @@ link_dotfiles() {
 
 check_platform
 install_homebrew
+clone_dotfiles
+trust_qmk
 install_brewfile
 install_uv
 install_rust
