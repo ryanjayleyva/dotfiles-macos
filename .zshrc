@@ -26,6 +26,7 @@ path=(
   "$HOMEBREW_PREFIX/bin"
   "$HOMEBREW_PREFIX/sbin"
   $path
+  "$HOME/.local/bin"
   "$HOME/.local/share/nvim/mason/bin"
 )
 
