@@ -1,0 +1,9 @@
+.DS_Store
+
+# pi configuration and data
+.pi/agent/auth.json
+.pi/agent/models-store.json
+.pi/agent/npm/
+.pi/agent/pi-subagents/
+.pi/agent/pi-web-access/
+.pi/agent/sessions/
