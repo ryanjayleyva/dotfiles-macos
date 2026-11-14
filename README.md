@@ -28,24 +28,26 @@ Personal macOS dotfiles managed with
 - A [Kulala](https://github.com/dont-be-evil-company/kulala.nvim) license
   token in `KULALA_CORE_LICENSE_TOKEN`, only if you use the HTTP client
 
+> **IMPORTANT:** The script only works on Apple Silicon.
+
 ## Install
 
 ```sh
-git clone https://github.com/ryanjayleyva/dotfiles-macos ~/dotfiles-macos
-cd ~/dotfiles-macos
-scripts/bootstrap.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ryanjayleyva/dotfiles-macos/main/scripts/bootstrap.sh)"
 ```
 
-> **IMPORTANT:** The script only works on Apple Silicon Macs.
+The script clones this repo to `~/dotfiles-macos`.
+
 
 The script installs, in order:
 
-1. Homebrew
-2. Everything in the `Brewfile`
-3. `uv`, with the standalone installer
-4. Rust and `rustfmt`, with rustup, using its default options (`-y`), which also adds cargo to your
+1. Homebrew, which also installs the Xcode Command Line Tools if missing
+2. This repo, cloned to `~/dotfiles-macos`
+3. Everything in the `Brewfile`
+4. `uv`, with the standalone installer
+5. Rust and `rustfmt`, with rustup, using its default options (`-y`), which also adds cargo to your
    `~/.zshenv`
-5. Your dotfiles, with `stow .`
+6. Your dotfiles, with `stow .`
 
 Open a new terminal afterwards so `uv` and `cargo` are on your `PATH`.
 
