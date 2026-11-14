@@ -63,6 +63,11 @@ compinit -C -d "$ZSH_CACHE_DIR/zcompdump"
 [[ -f ~/.p10k.zsh ]] &&
   source ~/.p10k.zsh
 
+source ~/.config/zsh/cutiepro-zsh-syntax-highlighting.zsh
+
+[[ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] &&
+  source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
 # Register aliases
 alias vim="nvim"
 alias tmux-s="$HOME/dotfiles-macos/scripts/tmux-sessionaire.sh"
