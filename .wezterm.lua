@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 
-local config = {
+return {
 	enable_tab_bar = false,
 	font_size = 18,
 	font = wezterm.font_with_fallback({ "CaskaydiaMono Nerd Font" }),
@@ -34,6 +34,7 @@ local config = {
 			"#37cb8a",
 			"#88847f",
 		},
+
 		brights = {
 			"#2e2a27",
 			"#e5a1a3",
@@ -46,5 +47,3 @@ local config = {
 		},
 	},
 }
-
-return config
