@@ -7,3 +7,6 @@
 .pi/agent/pi-subagents/
 .pi/agent/pi-web-access/
 .pi/agent/sessions/
+
+# gh CLI auth state
+.config/gh/hosts.yml
