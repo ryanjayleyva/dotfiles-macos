@@ -7,7 +7,6 @@ return {
 	window_background_opacity = 1,
 	window_decorations = "RESIZE",
 	scrollback_lines = 10000,
-	macos_window_background_blur = 10,
 
 	colors = {
 		foreground = "#d5d0c9",
