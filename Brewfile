@@ -13,6 +13,7 @@ cask "wezterm"
 cask "font-caskaydia-mono-nerd-font"
 
 # Git & security
+brew "gh"
 brew "git-delta"
 brew "gitleaks"
 
