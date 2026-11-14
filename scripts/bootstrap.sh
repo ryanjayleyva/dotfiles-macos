@@ -27,7 +27,19 @@ install_homebrew() {
   load_homebrew
 }
 
+trust_qmk() {
+  local tap
+
+  for tap in qmk/qmk osx-cross/arm osx-cross/avr; do
+    brew tap "$tap"
+    brew trust --tap "$tap"
+  done
+
+  brew trust --formula qmk/qmk/qmk
+}
+
 install_brewfile() {
+  trust_qmk
   brew bundle --file="$DOTFILES_DIR/Brewfile"
 }
 
