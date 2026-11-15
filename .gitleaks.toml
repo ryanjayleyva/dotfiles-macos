@@ -1,13 +1,10 @@
 title = "dotfiles-macos gitleaks config"
 
-# Default rules cover known API keys, tokens and private keys.
+# Extend the default rules because they already cover known keys, tokens and private keys
 [extend]
 useDefault = true
 
-# ---------------------------------------------------------------------------
-# Custom rules: private data that is not a "secret" but should not be public.
-# ---------------------------------------------------------------------------
-
+# Add custom rules because private data is not always a secret but should stay out of a public repo
 [[rules]]
 id = "personal-home-path"
 description = "Absolute home directory path (leaks username/machine layout); use ~ or $HOME"
@@ -30,7 +27,7 @@ regexes = [
   '''@users\.noreply\.github\.com$''',
   '''@example\.(?:com|org|net)$''',
   '''^noreply@''',
-  # Public-facing address the owner has approved for sharing
+  # Allow this address because it is the public one meant for sharing
   '''^hello\.rjleyva@gmail\.com$''',
 ]
 
@@ -75,15 +72,11 @@ tags = ["privacy", "file"]
 [rules.allowlist]
 paths = ['''(?i)\.env\.(?:example|sample|template)$''']
 
-# ---------------------------------------------------------------------------
-# Global allowlist
-# ---------------------------------------------------------------------------
-
+# Skip these paths because they hold no secrets or only binary content
 [allowlist]
 description = "Global allowlist"
 paths = [
   '''(?:^|/)\.DS_Store$''',
   '''^LICENSE$''',
-  '''^\.gitleaks\.toml$''',
   '''^assets/''',
 ]
