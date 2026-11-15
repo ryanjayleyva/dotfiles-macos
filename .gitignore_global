@@ -7,6 +7,8 @@
 .pi/agent/pi-subagents/
 .pi/agent/pi-web-access/
 .pi/agent/sessions/
+.pi/agent/extensions/herdr-agent-state.ts
+.pi/agent/skills/
 
 # gh CLI auth state
 .config/gh/hosts.yml
