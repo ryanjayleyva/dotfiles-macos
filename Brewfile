@@ -19,6 +19,7 @@ cask "zen"
 brew "gh"
 brew "git-delta"
 brew "gitleaks"
+brew "pre-commit"
 
 # Shell
 brew "powerlevel10k"
