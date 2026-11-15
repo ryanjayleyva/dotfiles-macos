@@ -11,3 +11,4 @@
 ^/\.gitleaks\.toml
 ^/docs
 ^/\.ruff_cache
+^/\.pre-commit-config\.yaml
