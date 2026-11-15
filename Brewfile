@@ -8,6 +8,7 @@ brew "pnpm"
 
 # Editor & terminal
 brew "neovim"
+brew "tree-sitter-cli"
 brew "tmux"
 cask "wezterm"
 cask "font-caskaydia-mono-nerd-font"

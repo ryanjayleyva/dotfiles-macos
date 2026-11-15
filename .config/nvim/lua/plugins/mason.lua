@@ -39,7 +39,6 @@ local tools = {
 	'prettier',
 	'shfmt',
 	'stylua',
-	'tree-sitter-cli',
 }
 
 local ensure_installed = vim.list_extend(vim.tbl_values(servers), tools)
