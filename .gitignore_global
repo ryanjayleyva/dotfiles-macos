@@ -10,5 +10,13 @@
 .pi/agent/extensions/herdr-agent-state.ts
 .pi/agent/skills/
 
+# herdr configuration and data
+.config/herdr/session-snapshots/
+.config/herdr/.plugins.lock
+.config/herdr/herdr-client.log
+.config/herdr/herdr-server.log
+.config/herdr/session.json
+.config/herdr/herdr.sock.agent
+
 # gh CLI auth state
 .config/gh/hosts.yml
