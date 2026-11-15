@@ -43,6 +43,12 @@ brew "qmk/qmk/qmk"
 brew "librsvg"
 brew "webp"
 
+# Containers
+brew "colima"
+brew "docker"
+brew "docker-compose"
+brew "docker-buildx"
+
 # Browser
 brew "zen"
 
