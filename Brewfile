@@ -12,6 +12,9 @@ brew "tmux"
 cask "wezterm"
 cask "font-caskaydia-mono-nerd-font"
 
+# Browser
+cask "zen"
+
 # Git & security
 brew "gh"
 brew "git-delta"
@@ -48,9 +51,6 @@ brew "colima"
 brew "docker"
 brew "docker-compose"
 brew "docker-buildx"
-
-# Browser
-brew "zen"
 
 # npm globals
 npm "@celigo/celigo-cli"
