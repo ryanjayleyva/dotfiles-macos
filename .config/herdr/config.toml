@@ -17,16 +17,24 @@ enabled = false
 
 [keys]
 prefix = "Ctrl+a"
-focus_pane_left = ["prefix+h", "ctrl+alt+h"]
-focus_pane_down = ["prefix+j", "ctrl+alt+j"]
-focus_pane_up = ["prefix+k", "ctrl+alt+k"]
-focus_pane_right = ["prefix+l", "ctrl+alt+l"]
+
 # Rebind prefix+1..9 to workspaces because I rarely open new tabs
 # Switch tabs with prefix+n and prefix+p instead
 switch_workspace = "prefix+1..9"
-previous_tab = ["prefix+p", "ctrl+alt+["]
-next_tab = ["prefix+n", "ctrl+alt+]"]
-new_tab = ["prefix+c", "ctrl+alt+c"]
-split_vertical = ["prefix+v", "ctrl+alt+d"]
-split_horizontal = ["prefix+minus", "ctrl+alt+shift+d"]
-zoom = ["prefix+z", "ctrl+alt+z"]
+
+# Tabs
+new_tab = "prefix+c"
+next_tab = "prefix+n"
+previous_tab = "prefix+p"
+
+# Splits and panes
+split_vertical = "prefix+v"
+split_horizontal = "prefix+minus"
+
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+
+# Maximize/Minimize pane
+zoom = "prefix+m"
