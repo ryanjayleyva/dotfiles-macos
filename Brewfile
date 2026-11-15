@@ -43,6 +43,9 @@ brew "qmk/qmk/qmk"
 brew "librsvg"
 brew "webp"
 
+# Browser
+brew "zen"
+
 # npm globals
 npm "@celigo/celigo-cli"
 npm "@earendil-works/pi-coding-agent"
