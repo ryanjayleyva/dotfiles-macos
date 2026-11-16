@@ -7,6 +7,7 @@ auto_switch = false
 [ui]
 status_indicators = "symbols"
 pane_gaps = false
+pane_borders = "off"
 hide_tab_bar_when_single_tab = true
 copy_on_select = false
 sidebar_start_collapsed = true
