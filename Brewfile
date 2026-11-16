@@ -38,6 +38,7 @@ brew "tree"
 brew "yq"
 brew "zoxide"
 brew "stow"
+brew "fastfetch"
 
 # Linting & formatting
 brew "actionlint"
