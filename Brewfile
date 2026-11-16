@@ -10,6 +10,7 @@ brew "pnpm"
 brew "neovim"
 brew "tree-sitter-cli"
 brew "tmux"
+brew "herdr"
 cask "wezterm"
 cask "font-caskaydia-mono-nerd-font"
 
