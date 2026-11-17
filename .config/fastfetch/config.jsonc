@@ -5,7 +5,11 @@
     "kernel",
     "uptime",
     "packages",
-    "keyboard",
+    {
+      "type": "custom",
+      "key": "Keyboard",
+      "format": "Fifi"
+    },
     "shell",
     "terminal",
     "editor",
