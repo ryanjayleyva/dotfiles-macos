@@ -12,3 +12,4 @@
 ^/docs
 ^/\.ruff_cache
 ^/\.pre-commit-config\.yaml
+^/\.pi/agent/mcp-.*\.json
