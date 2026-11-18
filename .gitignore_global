@@ -20,3 +20,7 @@
 
 # gh CLI auth state
 .config/gh/hosts.yml
+
+# MCP runtime/generated files (settings.json intentionally NOT ignored)
+.config/mcp/
+.pi/agent/mcp-*.json
