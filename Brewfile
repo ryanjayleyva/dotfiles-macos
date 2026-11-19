@@ -1,4 +1,5 @@
 # Taps
+tap "driceroland/tap"
 tap "qmk/qmk"
 
 # Languages & runtimes
@@ -15,7 +16,7 @@ cask "wezterm"
 cask "font-caskaydia-mono-nerd-font"
 
 # Browser
-cask "zen"
+cask "driceroland/tap/search"
 
 # Git & security
 brew "gh"
