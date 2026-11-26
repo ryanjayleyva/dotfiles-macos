@@ -1,6 +1,6 @@
 # dotfiles-macos
 
-![Neovim config overview](assets/neovim-config-overview.webp)
+![Dotfiles Preview](assets/dotfiles-preview.webp)
 
 Personal macOS dotfiles managed with
 [GNU Stow](https://www.gnu.org/software/stow/).
