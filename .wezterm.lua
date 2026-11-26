@@ -10,10 +10,10 @@ return {
 
 	colors = {
 		foreground = "#d5d0c9",
-		background = "#181716",
+		background = "#181818",
 
 		cursor_bg = "#e5a1a3",
-		cursor_fg = "#181716",
+		cursor_fg = "#181818",
 		cursor_border = "#e5a1a3",
 		compose_cursor = "#caa2ca",
 
